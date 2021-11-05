@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block noauth %}
+            <div style="position: relative;">
+                <div class="darkbg">
+                </div>
+                <div class="jb-box">
+                    <video muted autoplay loop playsinline id="vid">
+                        <source src="/MEDIA/main.mp4" type="video/mp4">
+                        <strong>동영상을 지원하지 않는 브라우저입니다.</strong>
+                    </video>
+                    <div class="jb-text">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <script>
+                document.getElementById('vid').play();
+            </script>
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block noauth %}
+<div style="position: relative;">
+    <div class="artist_box">
+        <img src="/MEDIA/artist_jonghyun_main_1.jpg" style="width: 100%;">
+        <div class="jb-text">
+            <p></p>
+        </div>
+    </div>
+</div>
+<div class="row" style="margin-bottom: 5%;">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-4">
+        <div class="artist_box" style="margin-top: 16%; margin-right: 10%;">
+            <img src="/MEDIA/artist_jonghyun_2.png" style="width: 95%; margin-top: 5%;">
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div style="width: 100%; margin-top: 16%;">
+            <span class="mb-5" style="color: white; font-size: 75px;">JONGHYUN</span>
+            <span class="mb-5 text-14" style="color: rgb(139, 139, 139);">종현</span>
+        </div>
+        <div class="mt-3">
+            <span style="color: white; font-size: 22px; margin-right: 5%;">본명</span>
+            <span class="text-14" style="color: white;">김종현</span>
+            <hr style="color: rgb(139, 139, 139);">
+            <span style="color: white; font-size: 22px; margin-right: 5%;">출생</span>
+            <span class="text-14" style="color: white;">1990. 4. 8, 양자리, 말띠</span>
+            <hr style="color: rgb(139, 139, 139);">
+            <span style="color: white; font-size: 22px; margin-right: 5%;">나이</span>
+            <span class="text-14" style="color: white;">~ 2017. 12. 18 (만 31세)</span>
+            <hr style="color: rgb(139, 139, 139);">
+            <span style="color: white; font-size: 22px;">솔로 앨범</span>
+            <span class="mb-5 text-14" style="color: rgb(139, 139, 139); margin-left: 1%;">Top 3</span>
+        </div>
+        <div class="row" style="margin-top: 8%;">
+            <div class="col-lg-4">
+                <img src="/MEDIA/jonghyun_pote_album_s.png" style="width: 100%;">
+                <p class="album-name"><b style="color: white;">Poet｜Artist</b></p>
+                <p class="album-date">2018.01.23</p>
+            </div>
+            <div class="col-lg-4">
+                <img src="/MEDIA/jonghyun_op1_album_s.png" style="width: 100%;">
+                <p class="album-name"><b style="color: white;">종현 소품집</b><br>'이야기 Op.1'</p>
+                <p class="album-date">2015.09.17</p>
+            </div>
+            <div class="col-lg-4">
+                <img src="/MEDIA/jonghyun_like_album_s.png" style="width: 100%;">
+                <p class="album-name"><b style="color: white;">좋아</b><br>The 1st Album</p>
+                <p class="album-date">2016.05.24</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2"></div>
+</div>
+<style>
+    .album-name {
+        margin-top: 7%;
+        text-align: center;
+        color: rgb(139, 139, 139);
+        font-size: 14px;
+    }
+    .album-date {
+        margin-top: -10px;
+        text-align: center;
+        color: rgb(139, 139, 139);
+        font-size: 10px;
+    }
+    .artist-box { 
+            width: 100%; 
+            height: auto; 
+            overflow: hidden;
+            margin: 0px auto; 
+            position: relative; 
+            z-index: 1;
+    }
+</style>
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block noauth %}
+<div class="row" style="height: 100%;">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+        <div class="container" style="width: 500px; margin-top: 17%;">
+            <h3 class="mb-5" style="color: white;">계정 설정</h3>
+            <form class="form-floating" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="mb-4 mt-4">
+                    <label for="exampleFormControlInput1" class="form-label mb-3" style="color: rgb(255, 255, 255); font-size: 18px;">사용자 계정</label>
+                    <input disabled type="text" class="form-control text-14" style="height: 40px;" id="exampleFormControlInput1" value="{{ user.username }}">
+                </div>
+                <hr style="color: rgb(139, 139, 139);">
+                <div class="mb-4 mt-4">
+                    <label for="exampleFormControlInput1" class="form-label mb-3" style="color: rgb(255, 255, 255); font-size: 18px;">비밀번호 재설정</label>
+                    <input type="password" name="password" class="form-control text-14" style="height: 40px;" id="exampleFormControlInput1">
+                </div>
+                <div class="mb-4 mt-4">
+                    <label for="exampleFormControlInput1" class="form-label mb-3" style="color: rgb(255, 255, 255); font-size: 18px;">비밀번호 확인</label>
+                    <input type="password" name="repassword" class="form-control text-14" style="height: 40px;" id="exampleFormControlInput1">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p class="mt-1" style="font-size: 13px; margin-bottom: 0px; color: rgb(255, 77, 77);">{{ message.message }}</p>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <button class="btn btn-login mt-5"><b>변경 내용 저장</b></button>
+                <div class="text-14 mt-2" style="margin-bottom: 15%; text-align: center;">
+                    <a href="#" data-bs-target="#exampleModal" data-bs-toggle="modal" style="color: rgb(139, 139, 139); text-decoration: none;">회원 탈퇴</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-lg-2"></div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">주의</h5>
+            </div>
+            <div class="modal-body text-center text-14 mt-3 mb-3">
+                회원 탈퇴를 원하실 경우 <b>'회원 탈퇴'</b>버튼을 누르십시오.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary text-14" data-bs-dismiss="modal">취소</button>
+                <a href="{% url 'main:userdel' %}"><button type="button" class="btn btn-danger text-14">회원 탈퇴</button></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .btn-login {
+        background-color: #79e5cb;
+        width: 100%;
+        height: 58px;
+    }
+    .cover {
+        object-fit: cover;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+    }
+    .jb-text { 
+            position: absolute; 
+            top: 50%; width: 100%;
+    }
+</style>
+{% endblock %}
